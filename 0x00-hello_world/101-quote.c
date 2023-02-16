@@ -1,5 +1,5 @@
 #include <unistd.h>
-#include <sys/syscall.h>
+#include <string.h>
 
 /**
  * main - Entry point
@@ -9,9 +9,8 @@
 
 int main(void)
 {
+	char *n = "that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
-	const char msg[] = "and that piece of art is useful\""
-		"- Dora Korpar, 2015-10-19\n";
-	syscall(SYS_write, 1, msg, sizeof(msg));
-	return (0);
+	write(STDERR_FILENO, n, strlen(n));
+	return (1);
 }

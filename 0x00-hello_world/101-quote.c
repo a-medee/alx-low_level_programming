@@ -9,7 +9,8 @@
 
 int main(void)
 {
-	char *n = "that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	char *n = "and that piece of art is useful\" - Dora Korpar,
+		"2015 - 10 - 19\n";
 
 	write(STDERR_FILENO, n, strlen(n));
 	return (1);

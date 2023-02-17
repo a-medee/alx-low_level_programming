@@ -17,28 +17,22 @@ int main(void)
 		{
 			for (c = b; c <= 9; c++)
 			{
-				if ((a != b))
+				if ((a != b) && (a != c) && (b != c))
 				{
-					if ((b != c))
-					{
-						if ((c != a))
-						{
-							putchar(a % 10 + '0');
-							putchar(b % 10 + '0');
-							putchar(c % 10 + '0');
 
-							if ((a + b + c) != 24)
-							{
-								putchar(',');
-								putchar(' ');
-							}
-						}
+					putchar(a % 10 + '0');
+					putchar(b % 10 + '0');
+					putchar(c % 10 + '0');
+
+					if ((a + b + c) != 24)
+					{
+						putchar(',');
+						putchar(' ');
 					}
 				}
 			}
 		}
 	}
-
 	putchar('\n');
 	return (0);
 }

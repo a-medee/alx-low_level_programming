@@ -2,35 +2,29 @@
 
 /**
  * jack_bauer - every minute of the day of Jack Bauer
- *
- * Description: a function that checks for lowercase character.
  */
 
 void jack_bauer(void)
 {
-	int hours = 0, min = 0;
+	int a = 0, b = 0, c = 0, d = 0;
 
-	for (hours = 0; hours <= 23; hours++)
+	for (a = 0; a <= 2; a++)
 	{
-		for (min = 0; min <= 59; min++)
+		for (b = 0; b <= 3; b++)
 		{
-			if (hours <= 9)
+			for (c = 0; c <= 5; c++)
 			{
-				_putchar('0' + 0);
-				_putchar('0' + hours);
-				_putchar(':');
-				_putchar('0' + 0);
-				_putchar('0' + min);
-
-			}
-			else
-			{
-				_putchar('0' + 0);
-				_putchar(':');
-				_putchar('0' + min);
+				for (d = 0; d <= 9; d++)
+				{
+					_putchar('0' + a);
+					_putchar('0' + b);
+					_putchar(':');
+					_putchar('0' + c);
+					_putchar('0' + d);
+					_putchar('\n');
+				}
 			}
 
-			_putchar('\n');
 		}
 	}
 }

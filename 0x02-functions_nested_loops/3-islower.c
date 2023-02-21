@@ -10,8 +10,8 @@
 
 int _islower(int c)
 {
-	int a = 65;
-	int b = 90;
+	int a = 97;
+	int b = 122;
 
 	if ((c <= a) && (a <= b))
 	{

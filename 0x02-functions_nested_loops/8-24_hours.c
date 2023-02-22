@@ -6,18 +6,6 @@
  * Description: a function that checks for lowercase character.
  */
 
-
-/**
- * main - check the code
- *
- * Return: Always 0.
- */
-int main(void)
-{
-    jack_bauer();
-    return (0);
-}
-
 void jack_bauer(void)
 {
 	int hours = 0, min = 0;
@@ -55,7 +43,7 @@ void jack_bauer(void)
 
 
 /**
- * print_all - every minute of the day of Jack Bauer
+ * print_all - print all number took in as parameter
  * @n : type int parameter
  *
  * Description: a function that display the number passed in parameter

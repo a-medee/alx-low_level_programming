@@ -16,8 +16,15 @@ void print_to_98(int n)
 
 	while (i <= 98)
 	{
-		printf("%d, ", i);
-		++i;
+		if (i == 98)
+		{
+			printf("%d",i);
+		}
+		else
+		{
+			printf("%d, ", i);
+			++i;
+		}
 	}
 
 	printf("\n");

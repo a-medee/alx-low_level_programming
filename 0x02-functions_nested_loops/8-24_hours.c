@@ -6,6 +6,18 @@
  * Description: a function that checks for lowercase character.
  */
 
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    jack_bauer();
+    return (0);
+}
+
 void jack_bauer(void)
 {
 	int hours = 0, min = 0;
@@ -18,13 +30,21 @@ void jack_bauer(void)
 			{
 				_putchar('0' + 0);
 				_putchar('0' + hours);
+				_putchar(':');
+			}
+			else
+			{
+				print_all(hours);
+				_putchar(':');
+			}
+			if (min <= 9)
+			{
 				_putchar('0' + 0);
 				_putchar('0' + min);
 
 			}
 			else
 			{
-				print_all(0);
 				print_all(min);
 			}
 

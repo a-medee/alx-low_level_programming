@@ -1,57 +1,47 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
- * times_table - a function that prints the 9 times table
+ * times_table - print multiplication table of 9
  *
+ * Return: void
  */
 
 void times_table(void)
 {
+	int i, j, temp, a, b;
 
-	int i, j, res;
-
-	for (i = 0; i <= 9; i++)
+	for (i = 0; i < 10; i++)
 	{
-		for (j = 0; j <= 9; j++)
+		for (j = 0; j < 10; j++)
 		{
-			res = j * i;
+			temp = i * j;
+			if (j != 0)
+				_putchar(' ');
 
-			if (j != 9)
+			if (temp > 9)
 			{
-				print_all(res);
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
+				a = temp / 10;
+				b = temp % 10;
+				_putchar('0' + a);
+				_putchar('0' + b);
+				if (j != 9)
+				{
+					_putchar(',');
+				}
 			}
 			else
 			{
-				print_all(res);
+				b = temp % 10;
+				_putchar('0' + b);
+				if (j != 9)
+				{
+					_putchar(',');
+					if (i * (j + 1) < 10)
+						_putchar(' ');
+				}
 			}
 		}
-
 		_putchar('\n');
 	}
-}
-
-
-/**
- * print_all - print all number took in as parameter
- * @n : type int parameter
- *
- * Description: a function that display the number passed in parameter
- */
-
-void print_all(int n)
-{
-
-	if (n < 0)
-	{
-		_putchar('-');
-		n = -n;
-	}
-
-	if (n / 10)
-		print_all(n / 10);
-
-	_putchar(n % 10 + '0');
 }

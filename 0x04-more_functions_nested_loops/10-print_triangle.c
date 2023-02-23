@@ -19,7 +19,7 @@ void print_triangle(int size)
 		{
 			for (j = i; j > 1; j--)
 			{
-				_putchar('.');
+				_putchar(' ');
 			}
 
 			print_that_hashtags(size - i);

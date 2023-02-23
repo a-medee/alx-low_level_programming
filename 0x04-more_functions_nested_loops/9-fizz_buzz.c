@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-void fizz_buzz_test();
+void fizz_buzz_test(void);
+
 /**
  * main - check the code
  *

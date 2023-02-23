@@ -1,10 +1,32 @@
 #include "main.h"
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * print_square - that prints a square
+ * @size: the size of the square, a variable of
+ * type int
  */
 
+void print_square(int size)
+{
+	int i, j;
+
+	for (i = 0; i < size; i++)
+	{
+		for (j = 0; j < size; j++)
+		{
+			_putchar('#');
+		}
+		if (i != (size-1))
+		{
+			_putchar('\n');
+		}
+	}
+	_putchar('\n');
+}
+int main(void)
+{
+    print_square(2);
+    print_square(10);
+    print_square(0);
+    return (0);
+}

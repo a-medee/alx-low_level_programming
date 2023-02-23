@@ -11,16 +11,19 @@
 
 void more_numbers(void)
 {
-	int i = 0;
+	int i = 0, j=0;
 
-	while (i <= 14)
+	for (j = 0; j <= 9; j++)
 	{
-		print_all(i);
-		i++;
+		i = 0;
+		while (i <= 14)
+		{
+			print_all(i);
+			i++;
+		}
+		_putchar('\n');
 	}
-
-	_putchar('\n');
-};
+}
 
 /**
  * print_all - print all number took in as parameter
@@ -34,8 +37,9 @@ void print_all(int n)
 {
 
 	if (n / 10)
+	{
 		print_all(n / 10);
-
+	}
 
 	_putchar(n % 10 + '0');
 }

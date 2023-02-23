@@ -20,4 +20,6 @@ void print_diagonal(int n);
 
 void print_square(int size);
 
-void fizz_buzz_test();
+void print_triangle(int size);
+
+void print_that_hashtags(int size);

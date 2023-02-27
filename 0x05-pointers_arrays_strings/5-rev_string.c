@@ -12,7 +12,7 @@
 void rev_string(char *s)
 {
 	unsigned long size = strlen(s);
-	int p = (size - 1), i = 0, tp = 0;
+	unsigned long  p = (size - 1), i = 0, tp = 0;
 
 	while (i <= (size / 2))
 	{

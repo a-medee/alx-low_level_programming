@@ -2,8 +2,8 @@
 #include <string.h>
 
 /**
- * _puts - hat prints a string
- * @n: a parameter of type int *
+ * _puts - prints a string
+ * @str: a parameter of type char *
  *
  * description: a function that prints a string, followed by a new line,
  * to stdout.

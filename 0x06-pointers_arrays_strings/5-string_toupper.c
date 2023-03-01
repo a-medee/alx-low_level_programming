@@ -18,6 +18,8 @@ char *string_toupper(char *a)
 
 	for (i = 0; i < b; i++)
 	{
+		if (isspace(*(a + i)))
+			continue;
 		*(a + i) = toupper(*(a + i));
 	}
 

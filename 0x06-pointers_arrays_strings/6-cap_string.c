@@ -20,6 +20,9 @@ char *cap_string(char *a)
 	for (i = 0; i < size; i++)
 	{
 		truth = ((ispunct(*(a + i)) || isspace(*(a + i))));
+		if (*(a + i) == '\t'){
+			*(a + i) = ' ';
+		}
 		if (!truth && !inword)
 		{
 			inword = 1;

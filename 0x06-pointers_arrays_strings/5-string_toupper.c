@@ -13,13 +13,11 @@
 
 char *string_toupper(char *a)
 {
-	unsigned long int b = strlen(a) - 1, i;
+	unsigned long int b = strlen(a), i;
 	char *s = a;
 
 	for (i = 0; i < b; i++)
 	{
-		if (isspace(*(a + i)))
-			continue;
 		*(a + i) = toupper(*(a + i));
 	}
 

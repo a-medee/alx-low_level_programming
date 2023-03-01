@@ -13,17 +13,19 @@
 
 char *cap_string(char *a)
 {
-	unsigned long int size = strlen(a) - 1, i;
+	unsigned long int size = strlen(a), i;
 	int inword = 0;
 	int truth;
 
 	for (i = 0; i < size; i++)
 	{
-		truth =((ispunct(*(a + i)) || isspace(*(a + i))));
-		if (*(a + i) == '.'){
-			*(a + (i + 1)) = toupper (*(a + (i + 1)));
+		truth = ((ispunct(*(a + i)) || isspace(*(a + i))));
+		if (*(a + i) == '.')
+		{
+			*(a + (i + 1)) = toupper(*(a + (i + 1)));
 		}
-		if (!truth && !inword){
+		if (!truth && !inword)
+		{
 			inword = 1;
 			*(a + i) = toupper(*(a + i));
 		}

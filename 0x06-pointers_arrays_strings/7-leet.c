@@ -4,7 +4,7 @@
 
 /**
  * leet - encode a string
- * @a: a pointer-to-char.
+ * @str: a pointer-to-char.
  *
  * description: a function that encodes a string into leet
  * Return: a pointer-to-char

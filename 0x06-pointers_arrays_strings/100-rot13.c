@@ -23,8 +23,6 @@ char *rot13(char *s1)
 		{
 			if (*(s1 + i) == (*(p + j)))
 				(*(s1 + i)) = *(l + j);
-			else if (*(s1 + i) == (*(l + j)))
-				*(s1 + i) = *(p + j);
 		}
 	}
 

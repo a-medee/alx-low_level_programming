@@ -9,13 +9,13 @@
  * Return: a pointer-to-char
  */
 
-char * rot13(char *s1)
+char *rot13(char *s1)
 {
 	unsigned long int a = strlen(s1), i;
-	int o = 26, j = 0 ;
+	int o = 26, j = 0;
 
-	char * p = "ABCDEFGHIJKLMabcdefghijklm";
-	char * l = "NOPQRSTUVWXYZnopqrstuvwxyz";
+	char *p = "ABCDEFGHIJKLMabcdefghijklm";
+	char *l = "NOPQRSTUVWXYZnopqrstuvwxyz";
 
 	for (i = 0; i < a; i++)
 	{

@@ -12,14 +12,13 @@
 char *rot13(char *s1)
 {
 	unsigned long int a = strlen(s1), i;
-	int j = 0;
-
-	char *p = "ABCDEFGHIJKLMabcdefghijklm";
-	char *l = "NOPQRSTUVWXYZnopqrstuvwxyz";
+	char *p = "ABCDEFGHIJKLMabcdefghijklmNOPQRSTUVWXYZnopqrstuvwxyz";
+	char *l = "NOPQRSTUVWXYZnopqrstuvwxyzABCDEFGHIJKLMabcdefghijklm";
+	int size = strlen(p), j = 0;
 
 	for (i = 0; i < a; i++)
 	{
-		for (j = 0; j < 26; j++)
+		for (j = 0; j < size; j++)
 		{
 			if (*(s1 + i) == (*(p + j)))
 				(*(s1 + i)) = *(l + j);

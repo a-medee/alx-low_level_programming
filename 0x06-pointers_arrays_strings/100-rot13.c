@@ -12,7 +12,7 @@
 char *rot13(char *s1)
 {
 	unsigned long int a = strlen(s1), i;
-	int o = 26, j = 0;
+	int j = 0;
 
 	char *p = "ABCDEFGHIJKLMabcdefghijklm";
 	char *l = "NOPQRSTUVWXYZnopqrstuvwxyz";
@@ -23,6 +23,9 @@ char *rot13(char *s1)
 		{
 			if (*(s1 + i) == (*(p + j)))
 				(*(s1 + i)) = *(l + j);
+			else if (*(s1 + i) == (*(l + j)))
+				*(s1 + i) = *(p + j);
+
 		}
 	}
 

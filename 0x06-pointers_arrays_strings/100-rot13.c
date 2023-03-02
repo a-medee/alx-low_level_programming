@@ -21,7 +21,10 @@ char *rot13(char *s1)
 		for (j = 0; j < size; j++)
 		{
 			if (*(s1 + i) == (*(p + j)))
+			{
 				(*(s1 + i)) = *(l + j);
+				break;
+			}
 		}
 	}
 

@@ -8,3 +8,6 @@ int _sqrt_recursion(int n);
 int another_function(int n, int k);
 int is_prime_number(int n);
 int another_funct(int n, int k);
+int is_palindrome(char *s);
+int wildcmp(char *s1, char *s2);
+int verify(char *s, char *p);

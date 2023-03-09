@@ -11,7 +11,7 @@
 
 int is_palindrome(char *s)
 {
-	return (verify(s, s+ (strlen(s) -1)));
+	return (verify(s, s + (strlen(s) - 1)));
 }
 
 
@@ -34,7 +34,7 @@ int verify(char *s, char *p)
 	if (*s == *p)
 	{
 		prev = ++s;
-		return verify(s,--p);
+		return (verify(prev, --p));
 	}
 	else
 	{

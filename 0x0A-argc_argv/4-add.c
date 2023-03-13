@@ -1,49 +1,55 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 
+
 /**
- * main - check the code
- * @argc: a type int parameter, representing the arguments count
- * for the main function
- * @argv: a pointer-to-pointer that stores arguments value
+ * check_number - check if string is a number
+ * @str: string to check
  *
- * description: main entry pointer of our program
- * Return: Always 0
+ * Return: 1 if is a number 0 else
+ */
+
+int check_number(char *str)
+{
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] < '0' || str[i] > '9')
+		{
+			if (i == 0 && (str[i] == '-' || str[i] == '+'))
+				return (1);
+			return (0);
+		}
+	}
+	return (1);
+}
+
+/**
+ * main - entry point
+ * @argc: argument count
+ * @argv: argument list
+ *
+ * Return: 0 if success 1 else
  */
 
 int main(int argc, char **argv)
 {
+	int i, result = 0;
 
-	int i, sum = 0;
-
-	if (argc > 1)
+	for (i = 1; i < argc; i++)
 	{
-		for (i = 1; i < argc; i++)
+		if (check_number(argv[i]))
 		{
-			if (!(atoi(argv[i])) && (*argv[i]) != '0')
-			{
-				printf("Error\n");
-				return (1);
-			}
-			else
-			{
-				if (atoi(argv[i]) >= 0)
-				{
-					sum += atoi(argv[i]);
-				}
-				else
-				{
-					printf("Error\n");
-					return (0);
-				}
-			}
+			result += atoi(argv[i]);
 		}
-		printf("%d\n", sum);
+		else
+		{
+			printf("Error\n");
+			return (1);
+		}
 	}
-	else
-	{
-		printf("%d\n", sum);
-	}
-
+	printf("%d\n", result);
 	return (0);
 }

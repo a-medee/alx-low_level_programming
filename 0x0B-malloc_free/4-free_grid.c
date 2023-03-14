@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <sys/cdefs.h>
 
 /**
  *free_grid - free a 2 dimensional grid previously created
@@ -11,7 +12,7 @@
  *Return: type void
  */
 
-void free_grid(int **grid, int height)
+void free_grid(int **grid,  __attribute__((unused))int height)
 {
 	free(grid);
 }

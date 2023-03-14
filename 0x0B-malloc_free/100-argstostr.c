@@ -1,7 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
-#include <ctype.h>
 #include <string.h>
 
 /**
@@ -16,7 +14,8 @@
 char *argstostr(int ac, char **av)
 {
 	char *a;
-	int i, j, size = 0, k = 0;
+	unsigned long int j, size = 0, k = 0;
+	int i = 0;
 
 	if ((ac == 0) || (av == NULL))
 	{

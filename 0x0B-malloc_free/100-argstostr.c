@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -28,8 +29,10 @@ char *argstostr(int ac, char **av)
 		{
 			size++;
 		}
+		size++;
 	}
-	a = malloc((size) * sizeof(char *));
+
+        a = malloc((size) * sizeof(char));
 
 	if (a)
 	{
@@ -50,3 +53,22 @@ char *argstostr(int ac, char **av)
 	return (a);
 
 }
+
+/**
+ * main - check the code for ALX School students.
+ *
+ * Return: Always 0.
+ */
+ int main(int ac, char *av[])
+ {
+     char *s;
+ 
+     s = argstostr(ac, av);
+     if (s == NULL)
+     {
+         return (1);
+     }
+     printf("%s", s);
+     free(s);
+     return (0);
+ }

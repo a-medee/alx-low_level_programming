@@ -25,7 +25,7 @@ char *argstostr(int ac, char **av)
 
 	for (i = 0; i < ac; i++)
 	{
-		for(j = 0; j < strlen(av[i]); j++)
+		for (j = 0; j < strlen(av[i]); j++)
 		{
 			size++;
 		}
@@ -50,24 +50,4 @@ char *argstostr(int ac, char **av)
 
 	return (a);
 
-}
-
-
-/**
- * main - check the code for ALX School students.
- *
- * Return: Always 0.
- */
-int main(int ac, char *av[])
-{
-    char *s;
-
-    s = argstostr(ac, av);
-    if (s == NULL)
-    {
-        return (1);
-    }
-    printf("%s", s);
-    free(s);
-    return (0);
 }

@@ -8,12 +8,19 @@
  *
  *description - a function that returns a pointer to a 2 dimensional
  *array of integers.
- *Return: a point-to-a-pointer
+ *Return: a point-to-a-pointer, NULL on failure
  */
 
 int **alloc_grid(int width, int height)
 {
-	int **p  = malloc(sizeof(int) * height), i, j;
+	int **p;
+	int i, j;
+
+	if ((width <= 0) || (height <= 0))
+	{
+		return (NULL);
+	}
+	p = malloc(sizeof(int *) * height);
 
 	if (p)
 	{
@@ -30,6 +37,8 @@ int **alloc_grid(int width, int height)
 		}
 		return (p);
 	}
-
-	return (NULL);
+	else
+	{
+		return (NULL);
+	}
 }

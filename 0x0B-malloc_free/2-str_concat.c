@@ -13,8 +13,21 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	unsigned long total_size = strlen(s1) + strlen(s2), i, j = 0;
-	char *pointr = malloc(total_size * sizeof(char));
+	unsigned long total_size, i, j = 0;
+	char *pointr;
+
+	if (s1 == NULL)
+	{
+		s1 = "";
+	}
+
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
+
+	total_size = strlen(s1) + strlen(s2);
+	pointr = malloc((total_size + 1) * sizeof(char));
 
 	if (pointr)
 	{

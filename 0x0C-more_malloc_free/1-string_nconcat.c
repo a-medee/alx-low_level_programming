@@ -60,7 +60,7 @@ char *n_differ(char *s1, char *s2, char *a, int n)
 
 	if (a)
 	{
-		while (i < (b + c))
+		while (i < (b + c + 1))
 		{
 			if (*s1)
 			{
@@ -103,7 +103,7 @@ char *n_issame(char *s1, char *s2, char *a)
 
 	if (a)
 	{
-		while (i < (b + c))
+		while (i < (b + c + 1))
 		{
 			if (*s1)
 			{

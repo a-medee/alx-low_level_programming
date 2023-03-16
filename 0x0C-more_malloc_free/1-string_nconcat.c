@@ -112,7 +112,7 @@ char *n_issame(char *s1, char *s2, char *a)
 			}
 			if (!(*s1) && *s2)
 			{
-				*(a + ++i) = *s2++;
+				*(a + i) = *s2++;
 				continue;
 			}
 			i++;

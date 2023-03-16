@@ -74,13 +74,12 @@ char *n_differ(char *s1, char *s2, char *a, int n)
 			i++;
 		}
 		*(a + i) = '\0';
+		return (a);
 	}
 	else
 	{
 		return (NULL);
 	}
-
-	return (a);
 }
 
 /**
@@ -120,6 +119,6 @@ char *n_issame(char *s1, char *s2, char *a)
 	}
 	else
 	{
-		return (a);
+		return (NULL);
 	}
 }

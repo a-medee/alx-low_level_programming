@@ -11,7 +11,7 @@
 
 void *malloc_checked(unsigned int b)
 {
-	unsigned int *a = malloc(b * sizeof(int));
+	void *a = malloc(b * sizeof(unsigned int));
 
 	if (a)
 	{

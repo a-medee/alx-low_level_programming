@@ -34,18 +34,16 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (a)
 	{
-		while (i < (b + c))
+		while (*s1)
 		{
-			if (*s1)
-			{
-				*(a + i) = *s1++;
-			}
-			if (!(*s1) && *s2 && count < n)
-			{
-				*(a + ++i) = *s2++;
-				count++;
-				continue;
-			}
+			*(a + i) = *s1++;
+			i++;
+		}
+
+		while ((count < n) && (*s2))
+		{
+			*(a + i) = *s2++;
+			count++;
 			i++;
 		}
 		*(a + i) = '\0';

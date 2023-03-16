@@ -39,7 +39,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			i++;
 		}
 
-		while ((count < n) && (*s2))
+		while ((count < n) && (*s2 != '\0'))
 		{
 			*(a + i) = *s2++;
 			count++;

@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
@@ -18,10 +19,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *a = NULL;
 	unsigned long c;
 
-	if (s1 == NULL)
-		s1 = " ";
-	if (s2 == NULL)
-		s2 = " ";
+	if ((s1 == NULL) || (s2 == NULL))
+	{
+		s2 = "";
+		s1 = "";
+	}
 
 	c = strlen(s2);
 	if (n < c)

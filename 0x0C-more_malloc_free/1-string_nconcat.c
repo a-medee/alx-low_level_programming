@@ -19,11 +19,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *a = NULL;
 	unsigned long c;
 
-	if ((s1 == NULL) || (s2 == NULL))
-	{
-		s2 = "";
+	if (s1 == NULL)
 		s1 = "";
-	}
+	if (s2 == NULL)
+		s2 = "";
 
 	c = strlen(s2);
 	if (n < c)
@@ -112,7 +111,7 @@ char *n_issame(char *s1, char *s2, char *a)
 			}
 			if (!(*s1) && *s2)
 			{
-				*(a + i) = *s2++;
+				*(a + ++i) = *s2++;
 				continue;
 			}
 			i++;

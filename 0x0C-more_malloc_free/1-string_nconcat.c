@@ -25,12 +25,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 
 	b  = strlen(s1), c = strlen(s2);
-	a = malloc((b + c + 1) * sizeof(char));
 
 	if (n >= c)
 	{
 		n = c;
 	}
+
+	a = malloc((b + c + 1) * sizeof(char));
 
 	if (a)
 	{

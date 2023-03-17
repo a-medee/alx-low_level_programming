@@ -17,18 +17,19 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *a = NULL;
-	unsigned long b = strlen(s1), c = strlen(s2), i = 0, count = 0;
+	unsigned long b, c, i = 0, count = 0;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
-	c = strlen(s2);
 	if (n >= c)
 	{
 		n = c;
 	}
+
+	b  = strlen(s1), c = strlen(s2);
 	a = malloc((b + c + 1) * sizeof(char));
 
 	if (a)

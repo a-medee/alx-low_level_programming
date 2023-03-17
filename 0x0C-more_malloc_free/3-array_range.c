@@ -22,11 +22,11 @@ int *array_range(int min, int max)
 
 	if (a)
 	{
-		for (i = 0; i < size || (min != (max + 1)); i++, min++)
+		for (i = 0; i < size && (min != (max + 1)); i++, min++)
 		{
 			*(a + i) = min;
 		}
-
+		a[i] = max;
 		return (a);
 	}
 	else

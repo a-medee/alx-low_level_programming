@@ -4,7 +4,7 @@
 /**
  * struct dog - create a new type named dog
  * @name: a type char * variable
- * @age: a type int variable
+ * @age: a type float variable
  * @owner: a type char * variable
  *
  * Description: a structure that creates a dog type using 3 fieds
@@ -13,7 +13,7 @@
 struct dog
 {
 	char *name;
-	int age;
+	float age;
 	char *owner;
 };
 

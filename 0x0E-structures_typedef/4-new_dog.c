@@ -43,7 +43,7 @@ dog_t *new_dog(char *name, float age, char *owner)
  * Description - copy str to dest
  */
 
-void copy_into (char *str, char *dest)
+void copy_into(char *str, char *dest)
 {
 	unsigned long i;
 

@@ -51,4 +51,5 @@ void copy_into (char *str, char *dest)
 	{
 		*(dest + i) = *(str + i);
 	}
+	*(dest + i) = '\0';
 }

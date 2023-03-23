@@ -5,7 +5,7 @@
 
 /**
  * print_all - print anything.
- * @formal: a list of type arguments
+ * @format: a list of type arguments
  *
  */
 

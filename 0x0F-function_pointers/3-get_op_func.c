@@ -14,7 +14,7 @@ int (*get_op_func(char *s))(int a, int b)
 		      {"%", op_mod}, {NULL, NULL}};
 	unsigned long i = 0;
 
-	while (i < sizeof(ops) / sizeof(op_t))
+	while (ops[i].op)
 	{
 		if (*s == *ops[i].op)
 		{

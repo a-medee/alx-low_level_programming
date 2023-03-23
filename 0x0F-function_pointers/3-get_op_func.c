@@ -1,5 +1,5 @@
 #include "3-calc.h"
-#include <stdio.h>
+#include <stddef.h>
 
 /**
  * get_op_func - select the operation that the user asked for
@@ -21,6 +21,7 @@ int (*get_op_func(char *s))(int a, int b)
 			return (ops[i].f);
 		}
 		i++;
+
 	}
 
 	return (NULL);

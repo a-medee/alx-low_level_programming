@@ -19,7 +19,7 @@ list_t *add_node_end(list_t **head, const char *str)
 
 	if (a)
 	{
-		while((*ad))
+		while ((*ad))
 		{
 			if ((*ad)->next == NULL)
 			{
@@ -30,7 +30,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		a->next = NULL;
 		a->str = strdup(str);
 		a->len = strlen(str);
-		if((*head) == NULL)
+		if ((*head) == NULL)
 			*head = a;
 
 		else
@@ -38,7 +38,7 @@ list_t *add_node_end(list_t **head, const char *str)
 			(*ad)->next = a;
 			(*head) = first;
 		}
-		return(a);
+		return (a);
 	}
 	return (NULL);
 }

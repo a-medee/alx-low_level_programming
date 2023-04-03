@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * print_list - a function that prints all the elements of a listint_t list.
+ * print_listint - a function that prints all the elements of a listint_t list.
  * @h: a variable of type list_t, the h whose elements will be printed
  *
  * Return: the number of node successfully printed

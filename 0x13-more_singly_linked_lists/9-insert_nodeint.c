@@ -17,17 +17,25 @@
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	unsigned int size = (unsigned int)listint_len(*head);
+	unsigned int size;
 	listint_t *nodeidx = malloc(sizeof(listint_t)), *beforenode, *afternode;
 
-	if  ((*head) && (idx == 0) && nodeidx)
+	if ((head == NULL) && (idx == 0) && nodeidx)
 	{
-		nodeidx->next = (*head);
+		nodeidx->next = NULL;
 		nodeidx->n = n;
+		head = &nodeidx;
+		return (nodeidx);
+	}
+        if  ((*head) && (idx == 0) && nodeidx)
+	{
+		size= (unsigned int)listint_len(*(head));
+		nodeidx->n = n;
+		nodeidx->next = (*head);
 		(*head) = nodeidx;
 		return (nodeidx);
 	}
-
+	size= (unsigned int)listint_len(*(head));
 	if  ((*head) && (idx <= size) && nodeidx)
 	{
 		afternode = get_nodeint_at_index(*head, idx);

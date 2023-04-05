@@ -13,7 +13,7 @@ void free_listint2(listint_t **head)
 {
 	listint_t *torm;
 
-	if (*head)
+	if (head)
 	{
 		while (*head)
 		{
@@ -22,6 +22,6 @@ void free_listint2(listint_t **head)
 			free(torm);
 		}
 
-		(*head) = NULL;
+		head = NULL;
 	}
 }

@@ -15,7 +15,7 @@
 int main(int argc, char **argv)
 {
 
-	int file, file_1, rd;
+	int file, file_1;
 	char buf[1024];
 
 	if (argc != 3)

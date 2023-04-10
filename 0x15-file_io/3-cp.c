@@ -11,8 +11,6 @@
  * Return: Always 0.
  */
 
-void close_file(int, int);
-
 int main(int argc, char **argv)
 {
 
@@ -41,7 +39,7 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 
-	while((rd = read(file, buf, 1023)) > 0)
+	while ((rd = read(file, buf, 1023)) > 0)
 	{
 		write(file_1, buf, rd);
 	}
@@ -51,6 +49,13 @@ int main(int argc, char **argv)
 
 	return (0);
 }
+
+/**
+ * close_file - close files descriptor
+ * @file: a file descriptor
+ * @file_1: a file descriptor
+ *
+ */
 
 void close_file(int file, int file_1)
 {

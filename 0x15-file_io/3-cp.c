@@ -57,13 +57,13 @@ void close_file(int file, int file_1)
 {
 	if (close(file) == -1)
 	{
-		dprintf(file, "%s, %d", "Can't close", file);
+		dprintf(STDERR_FILENO, "%s, %d", "Can't close", file);
 		exit(100);
 	}
 
 	if (close(file_1) == -1)
 	{
-		dprintf(file, "%s, %d", "Can't close", file_1);
+		dprintf(STDERR_FILENO, "%s, %d", "Can't close", file_1);
 		exit(100);
 	}
 }

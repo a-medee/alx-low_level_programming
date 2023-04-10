@@ -40,12 +40,7 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 
-	while ((rd = read(file, buf, 1023)) > 0)
-	{
-		write(file_1, buf, rd);
-	}
-
-
+	write_to_dest(file, file_1, buf, argv[2], argv[1]);
 	close_file(file, file_1);
 
 	return (0);
@@ -70,5 +65,38 @@ void close_file(int file, int file_1)
 	{
 		dprintf(file, "%s, %d", "Can't close", file_1);
 		exit(100);
+	}
+}
+
+/**
+ * write_to_dest - write a file to destination
+ * @file: a file descriptor
+ * @file_1: a file descriptor
+ * @buf: a buffer to be used for reading and writting
+ * @ar: a from which to read
+ * @from: a file from which to write
+ *
+ * Return: a type void
+ */
+
+void write_to_dest(int file, int file_1, char *buf, char *ar, char *from)
+{
+	int rd;
+
+	while ((rd = read(file, buf, 1024)) > 0)
+	{
+		if (write(file_1, buf, rd) != rd)
+		{
+			exit(99);
+			dprintf(STDERR_FILENO, "%s, %s\n", "Error: Can't write to",
+				ar);
+		}
+	}
+
+	if (rd == -1)
+	{
+		exit(98);
+		dprintf(STDERR_FILENO, "%s, %s\n", "Error: Can't read from file",
+			from);
 	}
 }

@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	file_1 = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
+	file_1 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (file_1 == -1)
 	{
 		dprintf(STDERR_FILENO, "%s, %s\n", "Error: Can't write to",

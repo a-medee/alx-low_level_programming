@@ -22,17 +22,18 @@
 int create_file(const char *filename, char *text_content)
 {
 	int file, rd;
-	unsigned long int size = strlen(text_content);
+	unsigned long int size;
 
 	if (filename)
 	{
 		file = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
 
-		if (file == -1)
+                if (file == -1)
 			return (-1);
 
 		if (text_content)
 		{
+			size = strlen(text_content);
 			rd = write(file, text_content, size);
 
 			if (rd == -1 || (unsigned long int) rd != size)

@@ -20,7 +20,7 @@
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int file, rd;
-	unsigned long int size = strlen(text_content);
+	unsigned long int size;
 
 	if (filename)
 	{
@@ -31,6 +31,7 @@ int append_text_to_file(const char *filename, char *text_content)
 
 		if (text_content)
 		{
+			size = strlen(text_content);
 			rd = write(file, text_content, size);
 
 			if (rd == -1 || (unsigned long int) rd != size)

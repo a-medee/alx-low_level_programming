@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 	file = open(argv[1], O_RDONLY);
 	if (file == -1)
 	{
-		dprintf(STDERR_FILENO, "%s, %s\n", "Error: Can't read from file",
+		dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't read from file",
 			argv[1]);
 		exit(98);
 	}
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 	file_1 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (file_1 == -1)
 	{
-		dprintf(STDERR_FILENO, "%s, %s\n", "Error: Can't write to",
+		dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't write to",
 			argv[2]);
 		exit(99);
 	}
@@ -57,13 +57,13 @@ void close_file(int file, int file_1)
 {
 	if (close(file) == -1)
 	{
-		dprintf(STDERR_FILENO, "%s, %d", "Can't close", file);
+		dprintf(STDERR_FILENO, "%s", "Can't close fd");
 		exit(100);
 	}
 
 	if (close(file_1) == -1)
 	{
-		dprintf(STDERR_FILENO, "%s, %d", "Can't close", file_1);
+		dprintf(STDERR_FILENO, "%s", "Can't close");
 		exit(100);
 	}
 }
@@ -88,15 +88,16 @@ void write_to_dest(int file, int file_1, char *buf, char *ar, char *from)
 		if (write(file_1, buf, rd) != rd)
 		{
 			exit(99);
-			dprintf(STDERR_FILENO, "%s, %s\n", "Error: Can't write to",
+			dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't write to",
 				ar);
 		}
 	}
 
 	if (rd == -1)
 	{
-		exit(98);
-		dprintf(STDERR_FILENO, "%s, %s\n", "Error: Can't read from file",
+		dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't read from file",
 			from);
+
+		exit(98);
 	}
 }

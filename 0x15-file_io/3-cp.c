@@ -87,9 +87,9 @@ void write_to_dest(int file, int file_1, char *buf, char *ar, char *from)
 	{
 		if (write(file_1, buf, rd) != rd)
 		{
-			exit(99);
 			dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't write to",
 				ar);
+			exit(99);
 		}
 	}
 

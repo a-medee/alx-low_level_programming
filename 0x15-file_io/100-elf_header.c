@@ -19,7 +19,7 @@ void print_elf_header(char *elf_header);
 int main(int argc, char *argv[])
 {
 	FILE *fp = fopen(argv[1], "rb");
-	char elf_header[1024];
+	char elf_header[34];
 
 	if (argc != 2)
 	{
@@ -63,15 +63,15 @@ int main(int argc, char *argv[])
  *
  * Return a type void element
  */
-
 void print_elf_header(char *elf_header)
 {
-	printf("Magic: %s\n", elf_header);
-	printf("Class: %d\n", elf_header[4]);
-	printf("Data: %d\n", elf_header[5]);
-	printf("Version: %d\n", elf_header[6] & 0x0f);
-	printf("OS/ABI: %d\n", elf_header[7] & 0x0f);
-	printf("ABI Version: %d\n", elf_header[8] & 0x0f);
-	printf("Type: %d\n", elf_header[9] & 0x0f);
-	printf("Entry point address: %x\n", *(unsigned int *)&elf_header[10]);
+	printf("ELF Header:\n");
+	printf("  Magic:   %s\n", elf_header);
+	printf("  Class:     %d\n", elf_header[4]);
+	printf("  Data:      %d\n", elf_header[5]);
+	printf("  Version:   %d\n", elf_header[6] & 0x0f);
+	printf("  OS/ABI:    %d\n", elf_header[7] & 0x0f);
+	printf("  ABI Version:%d\n", elf_header[8] & 0x0f);
+	printf("  Type:      %d\n", elf_header[9] & 0x0f);
+	printf("  Entry point address:%x\n", *(unsigned int *)&elf_header[10]);
 }

@@ -1,4 +1,5 @@
 #include "hash_tables.h"
+#include <string.h>
 
 /**
  * hash_table_set -  function that adds an element
@@ -17,7 +18,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (node && ht)
 	{
-		if (strlen(key) == 0)
+		if (strlen(key) == 0 || strlen(value) == 0)
 			return (0);
 
 		_keyindex = key_index((const unsigned char *)key, ht->size);

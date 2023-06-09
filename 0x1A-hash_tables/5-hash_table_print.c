@@ -15,7 +15,7 @@ void hash_table_print(const hash_table_t *ht)
 	else
 	{
 		printf("{");
-                for (i = 0; i < ht->size; i++)
+		for (i = 0; i < ht->size; i++)
 		{
 			if (ht->array[i])
 			{
@@ -33,7 +33,8 @@ void hash_table_print(const hash_table_t *ht)
 }
 
 /**
- * print_listint - a function that prints all the elements of a hash_node_t list.
+ * print_listint - a function that prints all the elements of a
+ * hash_node_t list.
  * @h: a variable of type list_t, the h whose elements will be printed
  *
  * Return: the number of node successfully printed
@@ -44,7 +45,7 @@ void print_listint(const hash_node_t *h)
 	while (h)
 	{
 		printf("%s': ", h->key);
-		if (h->next->next!= NULL)
+		if (h->next->next != NULL)
 			printf("%s, ", h->value);
 		if (h->next == NULL)
 			printf("%s", h->value);

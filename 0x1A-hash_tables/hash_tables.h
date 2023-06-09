@@ -42,5 +42,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 hash_node_t *add_node(hash_node_t **head, const char *key, const char *value);
 char *hash_table_get(const hash_table_t *ht, const char *key);
 hash_node_t *get_node_at_index(hash_node_t *head, const char *);
+void hash_table_print(const hash_table_t *ht);
+void print_listint(const hash_node_t *h);
 
 #endif /** _HASH_TABLE_H_ */

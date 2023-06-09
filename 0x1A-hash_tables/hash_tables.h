@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <string.h>
+#include <strings.h>
 
 /**
  * struct hash_node_s - Node of a hash table
@@ -39,6 +41,6 @@ unsigned long int key_index(const unsigned char *key, unsigned long int size);
 int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 hash_node_t *add_node(hash_node_t **head, const char *key, const char *value);
 char *hash_table_get(const hash_table_t *ht, const char *key);
-hash_node_t *get_node_at_index(hash_node_t *head, unsigned int index);
+hash_node_t *get_node_at_index(hash_node_t *head, const char *);
 
 #endif /** _HASH_TABLE_H_ */

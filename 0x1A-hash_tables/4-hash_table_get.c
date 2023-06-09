@@ -25,7 +25,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	if (!ht->array[index])
 		return (NULL);
-        if (!ht->array[index]->next)
+	if (!ht->array[index]->next)
 		return (ht->array[index]->value);
 
 	to_be_returned = get_node_at_index(ht->array[index], key);
@@ -39,7 +39,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
  * get_node_at_index -  a function that returns the nth node of a
  * hash_node_t linked list.
  * @head: a pointer to the first element of our linked list
- * @index: is the index of the node, starting at 0
+ * @key: the key
  *
  * Return: if the node does not exist, return NULL, the node otherwise
  */
@@ -50,7 +50,7 @@ hash_node_t *get_node_at_index(hash_node_t *head, const char *key)
 
 	if (head)
 	{
-		while(head)
+		while (head)
 		{
 			if ((strcmp(head->key, key) == 0))
 			{

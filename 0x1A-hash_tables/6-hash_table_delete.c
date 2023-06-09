@@ -12,22 +12,25 @@ void hash_table_delete(hash_table_t *ht)
 {
 	unsigned long i;
 
-	for (i = 0; i < ht->size; i++)
+	if (ht)
 	{
-		hash_node_t *node = ht->array[i];
+		for (i = 0; i < ht->size; i++)
+		{
+			hash_node_t *node = ht->array[i];
 
-		if (node != NULL)
-			free_list(&node);
+			if (node != NULL)
+				free_list(&node);
+		}
+
+		free(ht->array);
+		free(ht);
+		ht->array = NULL;
+		ht = NULL;
 	}
-
-	free(ht->array);
-	free(ht);
-	ht->array = NULL;
-	ht = NULL;
 }
 
 /**
- * free_listint2 - free a linked list
+ * free_list - free a linked list
  * @head: the head of the list to be freed
  *
  * Return: a type void

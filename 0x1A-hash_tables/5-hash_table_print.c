@@ -8,11 +8,12 @@
  */
 void hash_table_print(const hash_table_t *ht)
 {
-	unsigned long int i = 0, count = non_empty_node_count(ht);;
+	unsigned long int i = 0;
+	unsigned long int count = non_empty_node_count(ht);
 
 	if (!count)
 		printf("{}\n");
-	if(ht && count)
+	if (ht && count)
 	{
 		printf("{");
 		for (i = 0; i < ht->size; i++)

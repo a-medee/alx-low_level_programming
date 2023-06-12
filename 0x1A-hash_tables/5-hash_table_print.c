@@ -11,7 +11,7 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned long int i = 0;
 	unsigned long int count = non_empty_node_count(ht);
 
-	if (!count)
+	if (!count && ht)
 		printf("{}\n");
 	if (ht && count)
 	{
@@ -67,10 +67,13 @@ unsigned long non_empty_node_count(const hash_table_t *ht)
 {
 	unsigned long count = 0, i;
 
-	for (i = 0; i < ht->size; i++)
+	if (ht)
 	{
-		if (ht->array[i])
-			count++;
+		for (i = 0; i < ht->size; i++)
+		{
+			if (ht->array[i])
+				count++;
+		}
 	}
 	return (count);
 }

@@ -12,18 +12,19 @@ void hash_table_delete(hash_table_t *ht)
 {
 	unsigned long i;
 
-	if (ht)
+	if (ht && ht->array)
 	{
-		if (ht->array)
+		for (i = 0; i < ht->size; i++)
 		{
-			for (i = 0; i < ht->size; i++)
-			{
-				free_list(&ht->array[i]);
-			}
-
-			free(ht->array);
-			free(ht);
+			free_list(&ht->array[i]);
 		}
+
+		free(ht->array);
+		free(ht);
+	}
+	else if (ht && !ht->array)
+	{
+		free(ht);
 	}
 }
 

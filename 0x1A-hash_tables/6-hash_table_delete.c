@@ -16,16 +16,11 @@ void hash_table_delete(hash_table_t *ht)
 	{
 		for (i = 0; i < ht->size; i++)
 		{
-			hash_node_t *node = ht->array[i];
-
-			if (node != NULL)
-				free_list(&node);
+			free_list(&ht->array[i]);
 		}
 
 		free(ht->array);
 		free(ht);
-		ht->array = NULL;
-		ht = NULL;
 	}
 }
 
@@ -50,7 +45,5 @@ void free_list(hash_node_t **head)
 			free(torm->value);
 			free(torm);
 		}
-
-		head = NULL;
 	}
 }

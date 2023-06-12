@@ -8,11 +8,11 @@
  */
 void hash_table_print(const hash_table_t *ht)
 {
-	unsigned long int i = 0;
+	unsigned long int i = 0, count = non_empty_node_count(ht);;
 
-	if (!ht)
+	if (!count)
 		printf("{}\n");
-	else
+	if(ht && count)
 	{
 		printf("{");
 		for (i = 0; i < ht->size; i++)
@@ -20,15 +20,20 @@ void hash_table_print(const hash_table_t *ht)
 			if (ht->array[i])
 			{
 				printf("'%s': ", ht->array[i]->key);
-				printf("'%s', ", ht->array[i]->value);
-
+				if (count - 1 > 0)
+					printf("'%s', ", ht->array[i]->value);
+				else
+					printf("'%s'", ht->array[i]->value);
 				if (ht->array[i]->next)
 				{
-					print_listint(ht->array[i]);
+					print_listint(ht->array[i]->next);
+					if (count - 2 > 0)
+						printf(", ");
 				}
+				count--;
 			}
 		}
-		printf("\b\b}\n");
+		printf("}\n");
 	}
 }
 
@@ -44,11 +49,27 @@ void print_listint(const hash_node_t *h)
 {
 	while (h)
 	{
-		printf("%s': ", h->key);
-		if (h->next->next != NULL)
-			printf("%s, ", h->value);
-		if (h->next == NULL)
-			printf("%s", h->value);
+		printf("'%s': ", h->key);
+		printf("'%s'", h->value);
 		h = h->next;
 	}
+}
+
+/**
+ * non_empty_node_count - return the number of elements in a linked list.
+ * @ht: a type hash_table_t variable whose elements are  to be counted
+ *
+ * Return: a type size_t value
+ */
+
+unsigned long non_empty_node_count(const hash_table_t *ht)
+{
+	unsigned long count = 0, i;
+
+	for (i = 0; i < ht->size; i++)
+	{
+		if (ht->array[i])
+			count++;
+	}
+	return (count);
 }

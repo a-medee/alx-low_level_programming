@@ -22,5 +22,7 @@ oclean :
 fclean :
 	$(RM) *~ *.swp $(NAME) $(OBJ)
 
-re :
-	make
+re : FORCE
+	${CC} ${OBJ} -o ${NAME}
+
+FORCE :
